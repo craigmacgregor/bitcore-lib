@@ -17,9 +17,9 @@ var invalidbase58 = require('./data/bitcoind/base58_keys_invalid.json');
 
 describe('Address', function() {
 
-  var pubkeyhash = new Buffer('3c3fa3d4adcaf8f52d5b1843975e122548269937', 'hex');
+  var pubkeyhash = new Buffer('026235b58bfb95259b40b305f2534aac7c036b58d1b10dfbe9d94c13526d3f7dd5', 'hex');
   var buf = Buffer.concat([new Buffer([0]), pubkeyhash]);
-  var str = '16VZnHwRhwrExfeHFHGjwrgEMq8VcYPs9r';
+  var str = 'NPtmKy53yQnEfjZj1oop86H3nYuAwSmBuD';
 
   it('can\'t build without data', function() {
     (function() {

@@ -51,7 +51,7 @@ describe('Transaction', function() {
       'script': testScript,
       'satoshis': testAmount
     })
-    .to('mrU9pEmAx26HcbKVrABvgL7AwA5fjNFoDc', testAmount - 10000);
+    .to('NNZjNcB1Q6B3QiMZiXCpDfeeWb65kFBKWP', testAmount - 10000);
 
   it('can serialize to a plain javascript object', function() {
     var object = testTransaction.toObject();
@@ -198,13 +198,13 @@ describe('Transaction', function() {
 
   // TODO: Migrate this into a test for inputs
 
-  var fromAddress = 'mszYqVnqKoQx4jcTdJXxwKAissE3Jbrrc1';
+  var fromAddress = 'NPtmKy53yQnEfjZj1oop86H3nYuAwSmBuD';
   var simpleUtxoWith100000Satoshis = {
     address: fromAddress,
-    txId: 'a477af6b2667c29670467e4e0728b685ee07b240235771862318e29ddbe58458',
+    txId: 'ac2cead877d91eb100531bcbb175a3b9da624be75718e0ffa402c8e239bc2609',
     outputIndex: 0,
     script: Script.buildPublicKeyHashOut(fromAddress).toString(),
-    satoshis: 100000
+    satoshis: 99990000
   };
 
   var simpleUtxoWith1000000Satoshis = {
@@ -216,7 +216,7 @@ describe('Transaction', function() {
   };
   var anyoneCanSpendUTXO = JSON.parse(JSON.stringify(simpleUtxoWith100000Satoshis));
   anyoneCanSpendUTXO.script = new Script().add('OP_TRUE');
-  var toAddress = 'mrU9pEmAx26HcbKVrABvgL7AwA5fjNFoDc';
+  var toAddress = 'NXZn1hYtaxee7cTba5cay33LmYxWvJSTrC';
   var changeAddress = 'mgBCJAsvzgT2qNNeXsoECg2uPKrUsZ76up';
   var changeAddressP2SH = '2N7T3TAetJrSCruQ39aNrJvYLhG1LJosujf';
   var privateKey = 'cSBnVM4xvxarwGQuAfQFwqDg9k5tErHUHzgWsEfD4zdwUasvqRVY';
@@ -227,7 +227,7 @@ describe('Transaction', function() {
 
   var simpleUtxoWith1BTC = {
     address: fromAddress,
-    txId: 'a477af6b2667c29670467e4e0728b685ee07b240235771862318e29ddbe58458',
+    txId: 'ac2cead877d91eb100531bcbb175a3b9da624be75718e0ffa402c8e239bc2609',
     outputIndex: 1,
     script: Script.buildPublicKeyHashOut(fromAddress).toString(),
     satoshis: 1e8
